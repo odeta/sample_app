@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   # to the help action in the Static Pages controller
   get '/help', to: 'static_pages#help'
   # reates helper about_url
-  get '/about', to: 'static_pages#about'
+  get '/about',   to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
   # it is possible to use a named route otherthan the default:
   #  get  '/help',    to: 'static_pages#help', as: 'helf'
   # this creates a helper helf_path
-  get '/signup', to: 'users#new'
+  get '/signup',  to: 'users#new'
+  post '/signup', to: 'users#create'
+  resources :users
 end
