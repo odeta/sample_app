@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   # it is possible to use a named route otherthan the default:
   #  get  '/help',    to: 'static_pages#help', as: 'helf'
   # this creates a helper helf_path
-  get '/signup',  to: 'users#new'
-  post '/signup', to: 'users#create'
+  get    '/signup', to: 'users#new'
+  post   '/signup', to: 'users#create'
+  get    '/login',  to: 'sessions#new'
+  post   '/login',  to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   resources :users
 end
